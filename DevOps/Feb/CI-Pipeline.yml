@@ -1,0 +1,21 @@
+trigger:
+ none 
+
+pool:
+ vmImage: window-latest
+
+Steps:  
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '21.x'
+      displayName: Set up Node.js
+
+  
+  - script: npm install
+    displayName: Restore node modules for Total Serve
+  - script: npm run build
+    displayName: Build Total Serve 
+
+  - task: PublishBuildArtifact@1
+    displayName: publish to Artifact
+      
