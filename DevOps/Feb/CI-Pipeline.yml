@@ -16,6 +16,4 @@ steps:
   - script: npm run build
     displayName: Build Total Serve 
 
-  - task: PublishBuildArtifact@1
-    displayName: publish to Artifact
       
